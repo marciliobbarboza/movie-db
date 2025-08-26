@@ -5,7 +5,11 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "npm --prefix ./apps/api run dev",
-    "start": "npm --prefix ./apps/api run start"
+    "start": "npm --prefix ./apps/api run start",
+    "front": "npm --prefix ./apps/web run dev",
+    "frontend": "npm --prefix ./apps/web run dev",
+    "db:sync-indexes": "npm --prefix ./apps/api run db:sync-indexes",
+    "seed:tmdb": "npm --prefix ./apps/api run seed:tmdb"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",

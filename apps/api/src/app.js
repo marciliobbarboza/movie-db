@@ -1,14 +1,12 @@
 const express = require('express');
 const routes = require('./routes');
 const swaggerUi = require('swagger-ui-express');
-const swaggerSpec = require('./docs/swagger');
+const openapi = require('./openapi.json');
 
 const app = express();
-
 app.use(express.json());
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
-app.use('/', routes);
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openapi, { explorer: true }));
+app.use('/api', routes); // <- aqui
 
 module.exports = app;

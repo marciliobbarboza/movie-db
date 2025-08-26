@@ -1,11 +1,17 @@
+// apps/api/src/routes/users.js
 const express = require('express');
 const router = express.Router();
-const user = require('../controllers/userController');
+const auth = require('../middlewares/auth');
+const { list, getOne, create, update, remove, getMe, updateMe, getAvatar } = require('../controllers/userController');
 
-router.get('/', user.list);
-router.get('/:id', user.getOne);
-router.post('/', user.create);
-router.put('/:id', user.update);
-router.delete('/:id', user.remove);
+router.get('/me', auth, getMe);
+router.put('/me', auth, updateMe);
+router.get('/:id/avatar', getAvatar);
+
+router.get('/', list);
+router.get('/:id', getOne);
+router.post('/', auth, create);
+router.put('/:id', auth, update);
+router.delete('/:id', auth, remove);
 
 module.exports = router;
