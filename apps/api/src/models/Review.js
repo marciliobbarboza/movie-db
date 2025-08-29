@@ -1,4 +1,3 @@
-// apps/api/src/models/Review.js
 const mongoose = require('mongoose');
 
 const replySchema = new mongoose.Schema(

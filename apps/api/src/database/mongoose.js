@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const env = require('../config/env');
 
 async function connectMongo() {
-  await mongoose.connect(env.MONGO_URL);
+  await mongoose.connect(env.MONGO_URI);
   const { connection } = mongoose;
 
   connection.on('connected', () => {

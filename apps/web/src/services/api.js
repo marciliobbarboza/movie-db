@@ -1,5 +1,5 @@
-// apps/web/src/services/api.js
-const BASE = '/api';
+const BASE = import.meta.env.VITE_API_BASE || '/api';
+
 
 function authHeaders() {
     const t = localStorage.getItem('token');

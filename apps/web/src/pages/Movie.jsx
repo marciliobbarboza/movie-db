@@ -1,4 +1,3 @@
-// apps/web/src/pages/Movie.jsx
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { get, post, del } from '../services/api.js';
